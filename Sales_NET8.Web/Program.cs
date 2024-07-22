@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Sales_NET8.Web.Data;
+
 namespace Sales_NET8.Web
 {
     public class Program
@@ -9,6 +12,7 @@ namespace Sales_NET8.Web
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
