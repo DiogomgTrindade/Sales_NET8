@@ -1,0 +1,26 @@
+﻿@model Sales_NET8.Web.Data.Entities.Country
+
+@{
+    ViewData["Title"] = "Apagar pais";
+}
+
+<h1>Apagar Pais</h1>
+
+<h3>Tens a certeza que queres apagar?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-success">Voltar à Lista</a>
+    </form>
+</div>
