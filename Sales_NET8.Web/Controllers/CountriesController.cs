@@ -20,12 +20,15 @@ namespace Sales_NET8.Web.Controllers
         }
 
         // GET: Countries
+        [Route("Paises")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Countries.ToListAsync());
         }
 
+
         // GET: Countries/Details/5
+        [Route("Paises/Detalhes/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +47,7 @@ namespace Sales_NET8.Web.Controllers
         }
 
         // GET: Countries/Create
+        [Route("CriarPais")]
         public IActionResult Create()
         {
             return View();
@@ -66,6 +70,7 @@ namespace Sales_NET8.Web.Controllers
         }
 
         // GET: Countries/Edit/5
+        [Route("Paises/Editar/{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -117,6 +122,7 @@ namespace Sales_NET8.Web.Controllers
         }
 
         // GET: Countries/Delete/5
+        [Route("Paises/Apagar/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
