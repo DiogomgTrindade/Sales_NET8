@@ -12,6 +12,12 @@ namespace Sales_NET8.Web
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+
+            //Add runtime compilation
+            builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+
+            //Inject datacontext
             builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));
             var app = builder.Build();
 
@@ -22,6 +28,7 @@ namespace Sales_NET8.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
