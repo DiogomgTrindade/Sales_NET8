@@ -1,11 +1,12 @@
 ﻿@model Sales_NET8.Web.Data.Entities.Country
 
 @{
-    ViewData["Title"] = "Editar Pais";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Editar Pais</h1>
+<h1>Edit</h1>
 
+<h4>Country</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,15 +19,13 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <br />
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-success">Voltar à Lista</a>
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
